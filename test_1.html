@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            text-align: left;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+        }
+        .profile-pic {
+            border-radius: 30%;
+            width: 210px;
+            height: 200px;
+        }
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 20px;
+        }
+        .social-icons a {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+        }
+        .links {
+            margin: 20px 0;
+        }
+        .links a {
+            text-decoration: none;
+            color: #007bff;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .intro {
+            font-weight: normal;
+            text-align: justify;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .experience, .education {
+            margin-top: 10px;
+        }
+        .experience ul, .education ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .experience li, .education li {
+            margin: 10px 0;
+        }
+        .experience li span, .education li span {
+            color: #007bff;
+        }
+        .duty {
+            text-indent: 20px;
+            margin-top: 5px;
+        }
+        .publications {
+            margin-top: 40px;
+        }
+        .publication-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .publication-item-content {
+            display: flex;
+            align-items: center;
+        }
+        .publication-item img {
+            width: 200px;
+            height: 180px;
+            margin-right: 20px;
+        }
+        .publication-item p {
+            margin: 0;
+        }
+        .publication-links {
+            margin-top: 10px;
+        }
+        .publication-links a {
+            color: #007bff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-section">
+            <img src="mahmoud_1.jpg" alt="Mahmoud Ebrahimkhani, Ph.D." class="profile-pic">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/mahmoud-ebrahimkhani/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+                <a href="https://github.com/mahmoud-ekhani" target="_blank"><img src="github_logo.png" alt="GitHub"></a>
+                <a href="https://scholar.google.com/citations?user=G0FhV-8AAAAJ&hl=en" target="_blank"><img src="google_scholar_logo.png" alt="Google Scholar"></a>
+                <a href="mkhani_cv_2024_Jan.pdf" target="_blank"><img src="cv_logo.png" alt="CV"></a>
+            </div>
+        </div>
+        <h1>Mahmoud Ebrahimkhani, Ph.D.</h1>
+        <p class="intro">
+            I am an AI Scientist experienced in developing generative AI models, including DDPMs, LLMs, and GANs, 
+            designed using transformers, GNNs, RNNs, and CNNs, for various chem- and bio-informatics applications.
+            I am proficient in Python programming, deep learning tools like PyTorch and TensorFlow, and cloud platforms 
+            such as Azure and HPC. My work is to design, train, benchmark, and productionize ML models to tackle 
+            research challenges across image, time-series, text, and graph data.
+        </p>
+
+        <div class="section-title">Professional Experience</div>
+        <div class="experience">
+            <ul>
+                <li><strong>Artificial Intelligence Scientist</strong>, <span>1910 Genetics</span>, 2023 - Now
+                    <div class="duty">- Design and implement Generative AI models for drug discovery and development</div>
+                </li>
+                <li><strong>Postdoctoral Research Associate</strong>, <span>Northwestern University</span>, 2022 - 2023
+                    <div class="duty">- Conduct research on deep learning applications in 4D Flow MRI</div>
+                </li>
+                <li><strong>Graduate Research Assistant</strong>, <span>Stony Brook University</span>, 2017 - 2022
+                    <div class="duty">- Develop and optimize algorithms for biomedical image analysis and Terahertz time-series analysis</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section-title">Education</div>
+        <div class="education">
+            <ul>
+                <li><strong>MSc and PhD in Biomedical Engineering</strong>, <span>Stony Brook University, NY</span>, 2017 - 2022</li>
+                <li><strong>BSc in Electrical Engineering</strong>, <span>Tehran Polytechnic, Tehran</span>, 2011 - 2016</li>
+            </ul>
+        </div>
+
+        <div class="publications">
+            <h2>Selected Publications and Presentations</h2>
+            <div class="publication-item">
+                <div class="publication-item-content">
+                    <img src="publication_1.jpg" alt="Publication 1">
+                    <p>This paper investigates the application of deep learning to predict aortic flow metrics from wearable seismocardiography (SCG) devices, 
+                        compared to 4D flow MRI. It demonstrates that deep learning can accurately identify pathological changes in blood flow, such as 
+                        elevated peak systolic velocity, and differentiate between various heart valve conditions. In a study involving 77 subjects,
+                        the deep learning-derived metrics from SCG closely matched those obtained via 4D flow MRI, with high classification accuracy for 
+                        different valve conditions. The findings suggest that low-cost SCG devices, combined with deep learning, could potentially supplement
+                        or screen for aortic valve diseases.
+                    </p>
+                </div>
+                <div class="publication-links">
+                    <a href="https://link.to/publication" target="_blank">[Publication website]</a>
+                    <a href="https://github.com/link-to-repo" target="_blank">[Github Repo]</a>
+                </div>
+            </div>
+            <div class="publication-item">
+                <div class="publication-item-content">
+                    <img src="publication2.jpg" alt="Publication 2">
+                    <p>Summary of the work related to Paper 2. This could include the main findings, significance, and any other relevant details.
+                    </p>
+                </div>
+                <!-- <div class="publication-links">
+                    <a href="https://link.to/publication2" target="_blank">[Publication website]</a>
+                    <a href="https://github.com/link-to-repo2" target="_blank">[Github Repo]</a>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
