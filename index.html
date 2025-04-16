@@ -1,200 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mahmoud Ebrahimkhani | AI in Biotech</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: #333;
+            font-family: 'Helvetica Neue', sans-serif;
             margin: 0;
-            padding: 0;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px 20px;
             text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+        header img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin-bottom: 5px;
+        }
+        h2 {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 5px;
+            margin-top: 40px;
         }
         .container {
+            max-width: 850px;
+            margin: auto;
             padding: 20px;
-            text-align: left;
         }
-        .profile-section {
-            display: flex;
-            align-items: center;
+        .section p, .section ul {
+            line-height: 1.6;
         }
-        .profile-pic {
-            border-radius: 30%;
-            width: 210px;
-            height: 200px;
+        .section ul {
+            padding-left: 20px;
         }
-        .social-icons {
-            display: flex;
-            flex-wrap: wrap;
-            margin-left: 20px;
+        .socials a {
+            margin: 0 10px;
+            text-decoration: none;
         }
-        .social-icons a {
-            width: 50%;
+        .socials img {
+            width: 30px;
+            vertical-align: middle;
+        }
+        .pub-item {
+            margin-bottom: 20px;
+        }
+        .placeholder {
+            background-color: #e9ecef;
+            height: 150px;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 5px 0;
-        }
-        .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-        }
-        .links {
-            margin: 20px 0;
-        }
-        .links a {
-            text-decoration: none;
-            color: #007bff;
-            margin: 0 10px;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        .intro {
-            font-weight: normal;
-            text-align: justify;
-        }
-        .section-title {
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .experience, .education {
-            margin-top: 10px;
-        }
-        .experience ul, .education ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .experience li, .education li {
-            margin: 10px 0;
-        }
-        .experience li span, .education li span {
-            color: #007bff;
-        }
-        .duty {
-            text-indent: 20px;
-            margin-top: 5px;
-        }
-        .publications {
-            margin-top: 40px;
-        }
-        .publication-item {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-        .publication-item-content {
-            display: flex;
-            align-items: center;
-        }
-        .publication-item img {
-            width: 190px;
-            height: 150px;
-            margin-right: 10px;
-        }
-        .publication-item p {
-            margin: 0;
-        }
-        .publication-links {
-            margin-top: 10px;
-        }
-        .publication-links a {
-            color: #007bff;
-            text-decoration: none;
-            margin-right: 10px;
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="profile-section">
-            <img src="mahmoud_1.jpg" alt="Mahmoud Ebrahimkhani, Ph.D." class="profile-pic">
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/mahmoud-ebrahimkhani/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"></a>
-                <a href="https://github.com/mahmoud-ekhani" target="_blank"><img src="github_logo.png" alt="GitHub"></a>
-                <a href="https://scholar.google.com/citations?user=G0FhV-8AAAAJ&hl=en" target="_blank"><img src="google_scholar_logo.png" alt="Google Scholar"></a>
-                <a href="mkhani_cv_2024_Jan.pdf" target="_blank"><img src="cv_logo.png" alt="CV"></a>
-            </div>
-        </div>
-        <h1>Mahmoud Ebrahimkhani, Ph.D.</h1>
-        <p class="intro">
-            I am an AI Scientist experienced in developing generative AI models, including DDPMs, LLMs, and GANs, 
-            designed using transformers, GNNs, RNNs, and CNNs, for various chem- and bio-informatics applications.
-            I am proficient in Python programming, deep learning tools like PyTorch and TensorFlow, and cloud platforms 
-            such as Azure and HPC. My work is to design, train, benchmark, and productionize ML models to tackle 
-            research challenges across image, time-series, text, and graph data.
+
+<header>
+    <img src="mahmoud_1.jpg" alt="Mahmoud Ebrahimkhani">
+    <h1>Mahmoud Ebrahimkhani, Ph.D.</h1>
+    <p>AI Scientist | Generative Models | Biotech | Educator</p>
+    <div class="socials">
+        <a href="https://www.linkedin.com/in/mahmoud-ebrahimkhani/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"></a>
+        <a href="https://github.com/mahmoud-ekhani" target="_blank"><img src="github_logo.png" alt="GitHub"></a>
+        <a href="https://scholar.google.com/citations?user=G0FhV-8AAAAJ&hl=en" target="_blank"><img src="google_scholar_logo.png" alt="Google Scholar"></a>
+        <a href="mkhani_cv_2025_apr.pdf" target="_blank"><img src="cv_logo.png" alt="CV"></a>
+    </div>
+</header>
+
+<div class="container">
+    <div class="section">
+        <h2>About</h2>
+        <p>
+            I am an AI Scientist at 1910 Genetics with a deep background in generative modeling and predictive AI for drug discovery. 
+            My work focuses on building scalable models—transformers, GNNs, diffusion, and reinforcement learning—to generate novel, biologically meaningful molecules. 
+            I lead multimodal fusion projects integrating molecular graphs, quantum chemistry, and biological assay data.
         </p>
+    </div>
 
-        <div class="section-title">Professional Experience</div>
-        <div class="experience">
-            <ul>
-                <li><strong>Artificial Intelligence Scientist</strong>, <span>1910 Genetics</span>, 2023 - Now
-                    <div class="duty">- Design and implement Generative AI models for drug discovery and development</div>
-                </li>
-                <li><strong>Postdoctoral Research Associate</strong>, <span>Northwestern University</span>, 2022 - 2023
-                    <div class="duty">- Conduct research on deep learning applications in 4D Flow MRI</div>
-                </li>
-                <li><strong>Graduate Research Assistant</strong>, <span>Stony Brook University</span>, 2017 - 2022
-                    <div class="duty">- Develop and optimize algorithms for biomedical image analysis and Terahertz time-series analysis</div>
-                </li>
-            </ul>
+    <div class="section">
+        <h2>Research & Work</h2>
+        <ul>
+            <li><strong>1910 Genetics</strong> – Lead AI Scientist on molecule generation, BBBP prediction, and QM-informed modeling.</li>
+            <li><strong>Northwestern University</strong> – Built DL models for wearable cardiovascular diagnostics (Postdoc).</li>
+            <li><strong>Stony Brook University</strong> – Developed GNNs and neural image analysis pipelines for THz medical imaging (Ph.D.).</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Teaching @ Northeastern</h2>
+        <ul>
+            <li><strong>CSYE 7374 (Spring 2025):</strong> Applied Deep Learning & Generative Models in Healthcare. [<a href="https://chongchen1999.github.io/CSYE7374-2025/">Course Site</a>]</li>
+            <li><strong>Summer 2025:</strong> Frontiers in Generative AI for Medical Imaging and Healthcare</li>
+            <li><strong>Fall 2025:</strong> Large Language Models in Healthcare: Foundations and Applications</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Patent</h2>
+        <p><strong>Issued February 2025:</strong> ML system for noninvasive cardiovascular flow mapping using wearable SCG sensors.</p>
+    </div>
+
+    <div class="section">
+        <h2>Selected Publications</h2>
+        <div class="pub-item">
+            <div class="placeholder">[Figure Placeholder]</div>
+            <strong>Multimodal Graph-Attention Networks with QM-Guided Cross-Attention for ADMET Prediction</strong><br>
+            Submitted to NeurIPS 2025 (First Author) &mdash; Fusion of GNNs and QM for blood-brain barrier prediction.
         </div>
-
-        <div class="section-title">Education</div>
-        <div class="education">
-            <ul>
-                <li><strong>MSc and PhD in Biomedical Engineering</strong>, <span>Stony Brook University, NY</span>, 2017 - 2022</li>
-                <li><strong>BSc in Electrical Engineering</strong>, <span>Tehran Polytechnic, Tehran</span>, 2011 - 2016</li>
-            </ul>
+        <div class="pub-item">
+            <div class="placeholder">[Figure Placeholder]</div>
+            <strong>Deep Learning for Aortic Flow Estimation from SCG</strong><br>
+            <em>Annals of Biomedical Engineering, 2023</em> – Built DL pipeline to estimate flow dynamics from wearable sensors. 
+            <a href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">[Paper]</a>
         </div>
-
-        <div class="publications">
-            <h2>Selected Publications and Presentations</h2>
-            <div class="publication-item">
-                <div class="publication-item-content">
-                    <img src="publication_1.jpg" alt="Publication 1">
-                    <p>This paper explores the use of deep learning to predict aortic flow metrics from wearable seismocardiography (SCG) devices, 
-                        showing that it can accurately identify pathological blood flow changes and differentiate between various heart valve conditions.
-                        The study found that deep learning-derived metrics from SCG closely matched those obtained via 4D flow MRI, suggesting that 
-                         low-cost SCG devices combined with deep learning could supplement or screen for aortic valve diseases.
-                    </p>
-                </div>
-                <div class="publication-links">
-                    <a href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">[Publication website]</a>
-                    <a href="https://github.com/mahmoud-ekhani/deep_learning_seismocardiagraphy_4D_flow_MRI" target="_blank">[Github Repo]</a>
-                </div>
-            </div>
-            <div class="publication-item">
-                <div class="publication-item-content">
-                    <img src="publication_2.jpeg" alt="Publication 2">
-                    <p>This study highlights the application of deep learning neural networks to enhance the diagnosis and prognosis of burn injuries using 
-                        Terahertz time-domain spectroscopy (THz-TDS). By modeling the dielectric permittivity of in vivo porcine skin burns with the double 
-                        Debye dielectric relaxation theory, the research demonstrates that neural networks can leverage these parameters to automatically
-                         classify burn severity and predict wound healing outcomes, significantly improving the accuracy and efficiency of clinical assessments.
-                    </p>
-                </div>
-                <div class="publication-links">
-                    <a href="https://opg.optica.org/boe/fulltext.cfm?uri=boe-14-2-918&id=525614" target="_blank">[Publication website]</a>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-item-content">
-                        <img src="publication_3 copy.tiff" alt="Publication 3">
-                        <p>This study presents an automatic classification method for early and accurate burn injury assessment using terahertz (THz) time-domain 
-                            spectroscopic imaging. Utilizing a new fiber-coupled portable handheld spectral reflection scanner and supervised machine learning 
-                            algorithms, the system achieved high accuracy in differentiating between various burn severity grades, demonstrating its potential 
-                            for effective triage in clinical settings.
-                        </p>
-                    </div>
-                    <div class="publication-links">
-                        <a href="https://www.nature.com/articles/s41598-022-08940-4" target="_blank">[Publication website]</a>
-                    </div>
-                </div>
-            </div>
+        <div class="pub-item">
+            <div class="placeholder">[Figure Placeholder]</div>
+            <strong>Terahertz Imaging for Burn Diagnosis</strong><br>
+            <em>Scientific Reports, 2022</em> – Automated burn classification using THz time-domain imaging.
+            <a href="https://www.nature.com/articles/s41598-022-08940-4" target="_blank">[Paper]</a>
         </div>
     </div>
+
+    <div class="section">
+        <h2>Get in Touch</h2>
+        <p>I'm open to collaborations in AI-driven drug discovery, biomedical data modeling, and generative learning research.</p>
+        <p>Email: <strong>m.ebrahimkhani1993@gmail.com</strong></p>
+    </div>
+</div>
+
 </body>
 </html>
