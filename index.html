@@ -31,9 +31,11 @@
             border-bottom: 1px solid #dee2e6;
             padding-bottom: 5px;
             margin-top: 40px;
+            text-align: center;
         }
         .container {
-            max-width: 850px;
+            max-width: 950px;
+            width: 90%;
             margin: auto;
             padding: 20px;
         }
@@ -43,13 +45,20 @@
         .section ul {
             padding-left: 20px;
         }
+        .socials {
+            margin-top: 10px;
+        }
         .socials a {
             margin: 0 10px;
-            text-decoration: none;
+            display: inline-block;
         }
         .socials img {
-            width: 30px;
-            vertical-align: middle;
+            width: 28px;
+            height: 28px;
+            transition: transform 0.2s ease;
+        }
+        .socials img:hover {
+            transform: scale(1.1);
         }
         .pub-item {
             margin-bottom: 20px;
@@ -65,6 +74,24 @@
             font-style: italic;
             margin-bottom: 10px;
         }
+        .banner {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .banner img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .now-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -74,14 +101,30 @@
     <h1>Mahmoud Ebrahimkhani, Ph.D.</h1>
     <p>AI Scientist | Generative Models | Biotech | Educator</p>
     <div class="socials">
-        <a href="https://www.linkedin.com/in/mahmoud-ebrahimkhani/" target="_blank"><img src="linkedin_logo.png" alt="LinkedIn"></a>
-        <a href="https://github.com/mahmoud-ekhani" target="_blank"><img src="github_logo.png" alt="GitHub"></a>
-        <a href="https://scholar.google.com/citations?user=G0FhV-8AAAAJ&hl=en" target="_blank"><img src="google_scholar_logo.png" alt="Google Scholar"></a>
-        <a href="mkhani_cv_2025_apr.pdf" target="_blank"><img src="cv_logo.png" alt="CV"></a>
+        <a href="https://www.linkedin.com/in/mahmoud-ebrahimkhani/" target="_blank">
+            <img src="linkedin_logo.png" alt="LinkedIn" title="LinkedIn">
+        </a>
+        <a href="https://github.com/mahmoud-ekhani" target="_blank">
+            <img src="github_logo.png" alt="GitHub" title="GitHub">
+        </a>
+        <a href="https://scholar.google.com/citations?user=G0FhV-8AAAAJ&hl=en" target="_blank">
+            <img src="google_scholar_logo.png" alt="Google Scholar" title="Google Scholar">
+        </a>
+        <a href="mkhani_cv_2025_apr.pdf" target="_blank">
+            <img src="cv_logo.png" alt="CV" title="Download CV">
+        </a>
     </div>
 </header>
 
 <div class="container">
+    <div class="banner">
+        <img src="banner_placeholder.png" alt="AI + Biotech Research Banner">
+    </div>
+
+    <div class="now-section">
+        Now: Teaching Generative AI @ Northeastern | Working on BBBP CrossAttention
+    </div>
+
     <div class="section">
         <h2>About</h2>
         <p>
