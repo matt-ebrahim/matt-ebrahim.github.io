@@ -84,7 +84,7 @@
 
         /* ── Hero ─────────────────────────────────────────── */
         .hero {
-            padding: 72px 0 56px;
+            padding: 52px 0 44px;
             display: flex;
             align-items: center;
             gap: 32px;
@@ -96,6 +96,7 @@
             border-radius: 50%;
             object-fit: cover;
             flex-shrink: 0;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.06);
         }
 
         .hero-text h1 {
@@ -157,15 +158,34 @@
         }
 
         /* ── About ────────────────────────────────────────── */
-        .about p {
-            font-size: 0.95rem;
+        .about-content {
+            border-left: 2px solid #e5e5e5;
+            padding-left: 20px;
+        }
+
+        .about-content p {
+            font-size: 0.93rem;
             color: var(--text-secondary);
             line-height: 1.75;
             max-width: 600px;
         }
 
+        .about-content p + p {
+            margin-top: 10px;
+        }
+
         /* ── Experience ───────────────────────────────────── */
-        .exp-list { display: flex; flex-direction: column; gap: 28px; }
+        #experience {
+            background: var(--bg-subtle);
+            margin-left: -24px;
+            margin-right: -24px;
+            padding-left: 24px;
+            padding-right: 24px;
+            border-top: 1px solid var(--border);
+            border-bottom: none;
+        }
+
+        .exp-list { display: flex; flex-direction: column; gap: 24px; }
 
         .exp-item {
             display: flex;
@@ -359,12 +379,14 @@
                 padding: 48px 0 40px;
             }
 
-            .hero-portrait { width: 96px; height: 96px; }
-            .hero-text h1 { font-size: 1.4rem; }
-            .hero-links { justify-content: center; flex-wrap: wrap; }
+            .hero-portrait { width: 88px; height: 88px; }
+            .hero-text h1 { font-size: 1.35rem; }
+            .hero-links { justify-content: center; flex-wrap: wrap; gap: 12px; }
 
-            .nav-links { gap: 16px; }
+            .nav-links { gap: 14px; }
             .nav-links a { font-size: 0.75rem; }
+
+            #experience { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
 
             .course-item { flex-direction: column; gap: 2px; }
 
@@ -393,7 +415,7 @@
         <img class="hero-portrait" src="mahmoud_1.jpg" alt="Matt Ebrahim">
         <div class="hero-text">
             <h1>Matt Ebrahim, Ph.D.</h1>
-            <p class="tagline">AI Scientist working on generative models, drug discovery, and biomedical AI.</p>
+            <p class="tagline">AI Scientist building generative models for drug discovery and healthcare.</p>
             <div class="hero-links">
                 <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
                     <img src="linkedin_logo.png" alt="">LinkedIn
@@ -413,9 +435,10 @@
 
     <section id="about" class="about">
         <div class="section-label">About</div>
-        <p>
-            Senior Data Scientist at Formation Bio with a deep background in generative modeling and predictive AI for medical imaging and drug discovery. I build scalable models&mdash;transformers, GNNs, diffusion, and reinforcement learning&mdash;to generate novel, biologically meaningful molecules. I lead multimodal fusion projects integrating molecular graphs, quantum chemistry, and biological assay data.
-        </p>
+        <div class="about-content">
+            <p>Senior Data Scientist at Formation Bio, focused on generative modeling and predictive AI for drug discovery.</p>
+            <p>I build scalable models&mdash;transformers, GNNs, diffusion, and reinforcement learning&mdash;to generate biologically meaningful molecules. I lead multimodal fusion projects integrating molecular graphs, quantum chemistry, and biological assay data.</p>
+        </div>
     </section>
 
     <section id="experience">
