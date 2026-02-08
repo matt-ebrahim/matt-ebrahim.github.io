@@ -1,437 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matt Ebrahim, Ph.D.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --text: #111;
-            --text-secondary: #555;
-            --text-muted: #888;
-            --border: #eee;
-            --bg: #fff;
-            --bg-subtle: #fafafa;
-            --accent: #111;
-            --radius: 6px;
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #666;
+            --text-muted: #999;
+            --border: #e5e5e5;
+            --accent: #0066cc;
+            --accent-subtle: #f0f7ff;
         }
 
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        a { color: var(--text); text-decoration: none; }
+        a { color: inherit; text-decoration: none; }
 
-        /* ── Nav ──────────────────────────────────────────── */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(250, 250, 250, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-inner {
-            max-width: 720px;
+            max-width: 800px;
             margin: 0 auto;
             padding: 0 24px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 56px;
         }
 
         .nav-name {
             font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: -0.01em;
+            font-size: 0.95rem;
         }
 
         .nav-links {
             display: flex;
-            gap: 28px;
+            gap: 32px;
         }
 
         .nav-links a {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            font-weight: 500;
-            letter-spacing: 0.01em;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
             transition: color 0.2s;
         }
 
         .nav-links a:hover { color: var(--text); }
 
-        /* ── Container ────────────────────────────────────── */
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* ── Hero ─────────────────────────────────────────── */
+        /* Hero */
         .hero {
-            padding: 52px 0 44px;
-            display: flex;
-            align-items: center;
-            gap: 32px;
+            padding: 140px 0 80px;
+            text-align: center;
         }
 
         .hero-portrait {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            flex-shrink: 0;
-            box-shadow: 0 0 0 1px rgba(0,0,0,0.06), 0 2px 12px rgba(0,0,0,0.06);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
         }
 
-        .hero-text h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
             letter-spacing: -0.03em;
-            line-height: 1.2;
+            margin-bottom: 12px;
         }
 
-        .hero-text .tagline {
-            font-size: 0.95rem;
+        .hero .tagline {
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-top: 6px;
             font-weight: 400;
+            margin-bottom: 28px;
         }
 
         .hero-links {
             display: flex;
-            gap: 16px;
-            margin-top: 16px;
-            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .hero-links a {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 6px;
-            font-size: 0.82rem;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
             font-weight: 500;
-            color: var(--text-muted);
-            transition: color 0.2s;
+            color: var(--text-secondary);
+            transition: all 0.2s;
         }
 
-        .hero-links a:hover { color: var(--text); }
+        .hero-links a:hover {
+            border-color: var(--text-muted);
+            color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
 
         .hero-links a img {
             width: 16px;
             height: 16px;
-            object-fit: contain;
-            opacity: 0.55;
-            transition: opacity 0.2s;
+            opacity: 0.6;
         }
 
-        .hero-links a:hover img { opacity: 0.85; }
-
-        /* ── Sections ─────────────────────────────────────── */
+        /* Sections */
         section {
-            padding: 48px 0;
-            border-top: 1px solid var(--border);
+            padding: 80px 0;
         }
 
-        .section-label {
-            font-size: 0.7rem;
+        .section-header {
+            font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
 
-        /* ── About ────────────────────────────────────────── */
-        .about-content {
-            border-left: 2px solid #e5e5e5;
-            padding-left: 20px;
-        }
-
-        .about-content p {
-            font-size: 0.93rem;
+        /* About */
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: var(--text-secondary);
-            line-height: 1.75;
-            max-width: 600px;
+            max-width: 640px;
         }
 
-        .about-content p + p {
-            margin-top: 10px;
+        .about-text strong {
+            color: var(--text);
+            font-weight: 500;
         }
 
-        /* ── Experience ───────────────────────────────────── */
-        #experience {
-            background: var(--bg-subtle);
-            margin-left: -24px;
-            margin-right: -24px;
-            padding-left: 24px;
-            padding-right: 24px;
-            border-top: 1px solid var(--border);
-            border-bottom: none;
-        }
-
-        .exp-list { display: flex; flex-direction: column; gap: 24px; }
-
-        .exp-item {
+        .stats {
             display: flex;
-            gap: 16px;
-            align-items: flex-start;
+            gap: 48px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
         }
 
-        .exp-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: var(--radius);
-            object-fit: contain;
-            flex-shrink: 0;
-            margin-top: 2px;
+        .stat {
+            text-align: left;
         }
 
-        .exp-info h3 {
-            font-size: 0.95rem;
+        .stat-value {
+            font-size: 2rem;
             font-weight: 600;
-            letter-spacing: -0.01em;
+            color: var(--text);
+            letter-spacing: -0.02em;
         }
 
-        .exp-info .role {
-            font-size: 0.82rem;
+        .stat-label {
+            font-size: 0.85rem;
             color: var(--text-muted);
-            margin-top: 1px;
+            margin-top: 4px;
         }
 
-        .exp-info p {
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+            border-left: 2px solid var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 40px;
+        }
+
+        .timeline-item:last-child { padding-bottom: 0; }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -29px;
+            top: 4px;
+            width: 10px;
+            height: 10px;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .timeline-company {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .skill-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .skill-card p {
             font-size: 0.85rem;
             color: var(--text-secondary);
-            margin-top: 4px;
             line-height: 1.6;
         }
 
-        /* ── Teaching ─────────────────────────────────────── */
-        .teaching-intro {
+        /* Publications */
+        .pub-grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .pub-card {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 24px;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.2s;
         }
 
-        .teaching-intro img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
+        .pub-card:hover {
+            border-color: var(--text-muted);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
         }
 
-        .teaching-intro span {
-            font-size: 0.88rem;
+        .pub-image {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background: var(--bg);
+        }
+
+        .pub-content {
+            flex: 1;
+        }
+
+        .pub-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-subtle);
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .pub-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .pub-link {
+            font-size: 0.8rem;
+            color: var(--accent);
             font-weight: 500;
-            color: var(--text-secondary);
         }
 
+        .pub-link:hover { text-decoration: underline; }
+
+        /* Teaching */
         .course-list {
             list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
         }
 
         .course-item {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            gap: 12px;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
         }
 
+        .course-item:last-child { border-bottom: none; }
+
         .course-name {
-            font-size: 0.88rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            color: var(--text);
         }
 
         .course-name a {
-            color: var(--text-secondary);
-            font-weight: 400;
-            font-size: 0.82rem;
+            color: var(--accent);
+            margin-left: 8px;
+            font-size: 0.85rem;
         }
-
-        .course-name a:hover { color: var(--text); }
 
         .course-term {
-            font-size: 0.78rem;
-            color: var(--text-muted);
-            white-space: nowrap;
-            font-weight: 400;
-        }
-
-        /* ── Publications ─────────────────────────────────── */
-        .pub-list { display: flex; flex-direction: column; gap: 32px; }
-
-        .pub-item {}
-
-        .pub-badge {
-            display: inline-block;
-            font-size: 0.68rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            border: 1px solid var(--border);
-            padding: 2px 8px;
-            border-radius: 3px;
-            margin-bottom: 8px;
-        }
-
-        .pub-item h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            line-height: 1.4;
-        }
-
-        .pub-item .venue {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-top: 4px;
-        }
-
-        .pub-item p {
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-            line-height: 1.6;
-        }
-
-        .pub-item .pub-link {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 0.82rem;
-            font-weight: 500;
             color: var(--text-muted);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1px;
-            transition: color 0.2s, border-color 0.2s;
         }
 
-        .pub-item .pub-link:hover {
-            color: var(--text);
-            border-color: var(--text);
-        }
-
-        .pub-figure {
-            width: 100%;
-            max-height: 220px;
-            object-fit: contain;
-            border-radius: var(--radius);
-            background: var(--bg-subtle);
-            margin-bottom: 12px;
-        }
-
-        /* ── Skills ───────────────────────────────────────── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px 32px;
-        }
-
-        .skill-row {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-        }
-
-        .skill-label {
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: var(--text);
-            letter-spacing: 0.01em;
-        }
-
-        .skill-value {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-
-        /* ── Education ────────────────────────────────────── */
-        .edu-list { display: flex; flex-direction: column; gap: 12px; }
-
-        .edu-item h3 {
-            font-size: 0.93rem;
-            font-weight: 600;
-        }
-
-        .edu-item .edu-detail {
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-top: 1px;
-        }
-
-        /* ── Contact ──────────────────────────────────────── */
-        .contact p {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.75;
-        }
-
-        .contact .email-link {
-            display: inline-block;
-            margin-top: 12px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--text);
-            border-bottom: 1.5px solid var(--border);
-            padding-bottom: 2px;
-            transition: border-color 0.2s;
-        }
-
-        .contact .email-link:hover {
-            border-color: var(--text);
-        }
-
-        /* ── Footer ───────────────────────────────────────── */
-        footer {
-            padding: 40px 24px;
+        /* Contact */
+        .contact-section {
             text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            letter-spacing: 0.01em;
+            padding: 100px 0;
         }
 
-        /* ── Responsive ───────────────────────────────────── */
-        @media (max-width: 600px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
-                padding: 48px 0 40px;
-            }
+        .contact-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
 
-            .hero-portrait { width: 88px; height: 88px; }
-            .hero-text h1 { font-size: 1.35rem; }
-            .hero-links { justify-content: center; flex-wrap: wrap; gap: 12px; }
+        .contact-section p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
 
-            .nav-links { gap: 14px; }
-            .nav-links a { font-size: 0.75rem; }
+        .contact-email {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--text);
+            color: var(--bg);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
 
-            #experience { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
 
-            .course-item { flex-direction: column; gap: 2px; }
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .tagline { font-size: 1rem; }
+
+            .nav-links { display: none; }
+
+            .stats { flex-direction: column; gap: 24px; }
+
             .skills-grid { grid-template-columns: 1fr; }
 
-            section { padding: 36px 0; }
+            .pub-card { flex-direction: column; }
+            .pub-image { width: 100%; height: 160px; }
+
+            section { padding: 60px 0; }
         }
     </style>
 </head>
@@ -443,9 +441,7 @@
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
-            <a href="#teaching">Teaching</a>
-            <a href="#skills">Skills</a>
-            <a href="#publications">Publications</a>
+            <a href="#publications">Work</a>
             <a href="#contact">Contact</a>
         </div>
     </div>
@@ -453,93 +449,115 @@
 
 <div class="container">
 
-    <header class="hero">
+    <section class="hero">
         <img class="hero-portrait" src="mahmoud_1.jpg" alt="Matt Ebrahim">
-        <div class="hero-text">
-            <h1>Matt Ebrahim, Ph.D.</h1>
-            <p class="tagline">Senior Data Scientist &middot; Generative AI &middot; Drug Discovery &middot; Biotech</p>
-            <div class="hero-links">
-                <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
-                    <img src="linkedin_logo.png" alt="">LinkedIn
-                </a>
-                <a href="https://github.com/matt-ebrahim" target="_blank">
-                    <img src="github_logo.png" alt="">GitHub
-                </a>
-                <a href="https://scholar.google.com/citations?user=QKQsMQkAAAAJ&hl=en" target="_blank">
-                    <img src="google_scholar_logo.png" alt="">Scholar
-                </a>
-                <a href="MattEbrahim_Resume.pdf" target="_blank">
-                    <img src="cv_logo.png" alt="">Resume
-                </a>
-            </div>
+        <h1>Matt Ebrahim</h1>
+        <p class="tagline">Senior Data Scientist specializing in AI for Drug Discovery</p>
+        <div class="hero-links">
+            <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
+                <img src="linkedin_logo.png" alt="">LinkedIn
+            </a>
+            <a href="https://github.com/matt-ebrahim" target="_blank">
+                <img src="github_logo.png" alt="">GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?user=QKQsMQkAAAAJ&hl=en" target="_blank">
+                <img src="google_scholar_logo.png" alt="">Scholar
+            </a>
+            <a href="MattEbrahim_Resume.pdf" target="_blank">
+                <img src="cv_logo.png" alt="">Resume
+            </a>
         </div>
-    </header>
+    </section>
 
-    <section id="about" class="about">
-        <div class="section-label">About</div>
-        <div class="about-content">
-            <p>Senior Data Scientist at Formation Bio, leading high-impact drug repurposing initiatives and owning the full ML lifecycle from data curation through stakeholder communication.</p>
-            <p>I build scalable models&mdash;transformers, GNNs, diffusion, and reinforcement learning&mdash;for de novo molecule generation, ADMET prediction, and clinical portfolio prioritization. I also teach graduate-level AI courses at Northeastern University.</p>
-            <p>Ph.D. in Biomedical Engineering from Stony Brook University. 8+ first-author papers, 30+ co-authored publications, and a U.S. patent.</p>
+    <section id="about">
+        <div class="section-header">About</div>
+        <p class="about-text">
+            I'm a <strong>Senior Data Scientist at Formation Bio</strong>, where I lead drug repurposing initiatives using machine learning. I build scalable models—transformers, graph neural networks, diffusion models—for molecule generation, ADMET prediction, and clinical portfolio prioritization.
+        </p>
+        <p class="about-text" style="margin-top: 16px;">
+            I also teach graduate-level AI courses at <strong>Northeastern University</strong>, focusing on deep learning applications in healthcare and drug discovery.
+        </p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">8+</div>
+                <div class="stat-label">First-author papers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">30+</div>
+                <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">1</div>
+                <div class="stat-label">U.S. Patent</div>
+            </div>
         </div>
     </section>
 
     <section id="experience">
-        <div class="section-label">Experience</div>
-        <div class="exp-list">
-            <div class="exp-item">
-                <img class="exp-logo" src="formation_bio_logo.png" alt="Formation Bio">
-                <div class="exp-info">
-                    <h3>Formation Bio</h3>
-                    <div class="role">Senior Data Scientist &middot; Jun 2025 &ndash; Present</div>
-                    <p>Lead drug repurposing initiatives across the full ML lifecycle. Architected GNN pipelines on biomedical knowledge graphs for portfolio investment decisions. Built MRI surrogate endpoint models, scalable data curation pipelines on GCP, and fine-tuned domain-specific LLMs for ontology mapping.</p>
-                </div>
+        <div class="section-header">Experience</div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Jun 2025 — Present</div>
+                <div class="timeline-title">Senior Data Scientist</div>
+                <div class="timeline-company">Formation Bio</div>
+                <p class="timeline-desc">Lead drug repurposing with GNN pipelines on biomedical knowledge graphs. Build MRI surrogate endpoint models and fine-tune domain-specific LLMs for ontology mapping.</p>
             </div>
-            <div class="exp-item">
-                <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
-                <div class="exp-info">
-                    <h3>1910 Genetics</h3>
-                    <div class="role">AI Scientist II &middot; Nov 2024 &ndash; May 2025</div>
-                    <p>Led design and deployment of generative AI systems for de novo molecular generation. Developed novel multimodal architecture for BBB permeability prediction (submitted to NeurIPS 2025). Delivered molecules that progressed through in vitro/in vivo validation with nanomolar inhibition.</p>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2023 — May 2025</div>
+                <div class="timeline-title">AI Scientist I → II</div>
+                <div class="timeline-company">1910 Genetics</div>
+                <p class="timeline-desc">Led generative AI for de novo molecular design. Developed multimodal GNN architecture for BBB permeability (NeurIPS 2025 submission). Delivered molecules progressing through in vitro/in vivo validation.</p>
             </div>
-            <div class="exp-item">
-                <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
-                <div class="exp-info">
-                    <h3>1910 Genetics</h3>
-                    <div class="role">AI Scientist I &middot; 2023 &ndash; Nov 2024</div>
-                    <p>Built and deployed GNNs, chemical language models, and diffusion models for small molecule generation. Integrated quantum mechanics features into graph models for ADMET prediction. Developed SMILES-based RNNs with RL for CNS-targeted drug discovery.</p>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022 — 2023</div>
+                <div class="timeline-title">Clinical Research Associate</div>
+                <div class="timeline-company">Northwestern University</div>
+                <p class="timeline-desc">Deep learning for medical imaging. CycleGAN for MRI synthesis from CT. CNN-MLP for aortic flow estimation from wearable sensors (first-author publication + U.S. patent).</p>
             </div>
-            <div class="exp-item">
-                <img class="exp-logo" src="northwestern_logo.png" alt="Northwestern University">
-                <div class="exp-info">
-                    <h3>Northwestern University</h3>
-                    <div class="role">Clinical Research Associate &middot; 2022 &ndash; 2023</div>
-                    <p>Led research at the intersection of medical imaging and deep learning. Developed CycleGAN for MRI flow synthesis from CT data. Built CNN-MLP systems for non-invasive aortic blood flow estimation from wearable SCG signals, resulting in a first-author publication and U.S. patent.</p>
-                </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017 — 2022</div>
+                <div class="timeline-title">Ph.D. in Biomedical Engineering</div>
+                <div class="timeline-company">Stony Brook University</div>
+                <p class="timeline-desc">ML models for terahertz imaging and burn injury diagnostics. 8+ first-author and 30+ co-authored peer-reviewed publications.</p>
             </div>
-            <div class="exp-item">
-                <img class="exp-logo" src="stony_brook_logo.png" alt="Stony Brook University">
-                <div class="exp-info">
-                    <h3>Stony Brook University</h3>
-                    <div class="role">Ph.D. Research &middot; 2017 &ndash; 2022</div>
-                    <p>Developed signal- and image-processing ML models for terahertz imaging and burn injury diagnostics. Published 8+ first-author papers and co-authored 30+ peer-reviewed publications.</p>
-                </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Generative AI</h3>
+                <p>Diffusion (DDPM), Transformers (GPT, T5), VAE, GAN, RNN/LSTM, Reinforcement Learning</p>
+            </div>
+            <div class="skill-card">
+                <h3>Graph ML</h3>
+                <p>Graphormer, GCN, GAT, MPNN, PyG, DGL, Knowledge Graphs</p>
+            </div>
+            <div class="skill-card">
+                <h3>Drug Discovery</h3>
+                <p>RDKit, DeepChem, AutoDock Vina, ESMFold, AlphaFold, ADMET modeling</p>
+            </div>
+            <div class="skill-card">
+                <h3>Foundation Models</h3>
+                <p>BioMistral, BioMegatron, SapBERT, MedGemma, BioMedCLIP, DINOv3</p>
+            </div>
+            <div class="skill-card">
+                <h3>ML Frameworks</h3>
+                <p>PyTorch, TensorFlow, Hugging Face, Scikit-learn, Optuna</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud & MLOps</h3>
+                <p>Azure ML, AWS (Bedrock, SageMaker), GCP, Snowflake, Docker</p>
             </div>
         </div>
     </section>
 
     <section id="teaching">
-        <div class="section-label">Teaching</div>
-        <div class="teaching-intro">
-            <img src="northeastern_logo.png" alt="Northeastern">
-            <span>Adjunct Teaching Professor, Northeastern University &middot; Spring 2025 &ndash; Present</span>
-        </div>
-        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Designed and delivered graduate courses with hands-on experience in foundation models, diffusion models for medical image synthesis, and chemical language models for drug generation.</p>
+        <div class="section-header">Teaching — Northeastern University</div>
         <ul class="course-list">
             <li class="course-item">
-                <span class="course-name">CSYE 7374: Deep Learning &amp; Generative AI in Healthcare <a href="https://matt-ebrahim.github.io/CSYE7374" target="_blank">&rarr;</a></span>
+                <span class="course-name">Deep Learning & Generative AI in Healthcare <a href="https://matt-ebrahim.github.io/CSYE7374" target="_blank">→</a></span>
                 <span class="course-term">Spring 2025</span>
             </li>
             <li class="course-item">
@@ -553,119 +571,59 @@
         </ul>
     </section>
 
-    <section id="skills">
-        <div class="section-label">Technical Skills</div>
-        <div class="skills-grid">
-            <div class="skill-row">
-                <span class="skill-label">Languages</span>
-                <span class="skill-value">Python, C++, MATLAB, Bash</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">AI/ML Frameworks</span>
-                <span class="skill-value">PyTorch, TensorFlow, Scikit-learn, Optuna, Hugging Face</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Generative Modeling</span>
-                <span class="skill-value">Diffusion (DDPM), Transformers (GPT, T5), VAE, GAN, RNN/LSTM</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Molecular Modeling</span>
-                <span class="skill-value">RDKit, DeepChem, AutoDock Vina, ESMFold, AlphaFold</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Graph ML</span>
-                <span class="skill-value">Graphormer, GCN, GAT, MPNN, DGL, PyG</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Foundation Models</span>
-                <span class="skill-value">BioMistral, BioMegatron, SapBERT, MedGemma, BioMedCLIP, DINOv3</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Cloud &amp; MLOps</span>
-                <span class="skill-value">Azure ML, AWS (Bedrock, SageMaker), GCP, Snowflake, Docker, Git</span>
-            </div>
-            <div class="skill-row">
-                <span class="skill-label">Domains</span>
-                <span class="skill-value">Drug discovery, ADMET, protein-ligand design, medical imaging, knowledge graphs</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="section-label">Education</div>
-        <div class="edu-list">
-            <div class="edu-item">
-                <h3>Ph.D., Biomedical Engineering</h3>
-                <div class="edu-detail">Stony Brook University &middot; 2022</div>
-            </div>
-            <div class="edu-item">
-                <h3>B.Sc., Electrical Engineering</h3>
-                <div class="edu-detail">Amirkabir University of Technology &middot; 2016</div>
-            </div>
-        </div>
-    </section>
-
     <section id="publications">
-        <div class="section-label">Select Publications &amp; Patent</div>
-        <div class="pub-list">
-
-            <div class="pub-item">
-                <img class="pub-figure" src="pub_patent_cardio.png" alt="Cardiovascular Diagnostics Using Deep Learning">
-                <span class="pub-badge">Patent</span>
-                <h3>Personalized Chest Acceleration Using Deep Learning</h3>
-                <div class="venue">U.S. Patent &middot; Issued 2025</div>
-                <p>ML system for noninvasive cardiovascular flow mapping using wearable SCG sensors.</p>
-                <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent</a>
+        <div class="section-header">Selected Publications</div>
+        <div class="pub-grid">
+            <div class="pub-card">
+                <img class="pub-image" src="pub_patent_cardio.png" alt="">
+                <div class="pub-content">
+                    <span class="pub-badge">Patent</span>
+                    <h3 class="pub-title">Personalized Chest Acceleration Using Deep Learning</h3>
+                    <div class="pub-venue">U.S. Patent · Issued 2025</div>
+                    <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent →</a>
+                </div>
             </div>
-
-            <div class="pub-item">
-                <img class="pub-figure" src="pub_admet_gnn.png" alt="ADMET Prediction">
-                <h3>Multimodal Graph-Attention Networks with QM-Guided Cross-Attention for ADMET Prediction</h3>
-                <div class="venue">Submitted to NeurIPS 2025 &middot; First Author</div>
-                <p>Fusion of GNNs and quantum mechanics for blood-brain barrier prediction.</p>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_admet_gnn.png" alt="">
+                <div class="pub-content">
+                    <span class="pub-badge">NeurIPS 2025</span>
+                    <h3 class="pub-title">Multimodal Graph-Attention Networks with QM-Guided Cross-Attention for ADMET Prediction</h3>
+                    <div class="pub-venue">Submitted · First Author</div>
+                </div>
             </div>
-
-            <div class="pub-item">
-                <img class="pub-figure" src="pub_aortic_scg.png" alt="Aortic Diagnosis">
-                <h3>Deep Learning for Aortic Flow Estimation from SCG</h3>
-                <div class="venue">Annals of Biomedical Engineering, 2023 &middot; First Author</div>
-                <p>Deep learning pipeline to estimate flow dynamics from wearable sensors.</p>
-                <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper</a>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_aortic_scg.png" alt="">
+                <div class="pub-content">
+                    <h3 class="pub-title">Deep Learning for Aortic Flow Estimation from SCG</h3>
+                    <div class="pub-venue">Annals of Biomedical Engineering, 2023 · First Author</div>
+                    <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper →</a>
+                </div>
             </div>
-
-            <div class="pub-item">
-                <img class="pub-figure" src="pub_burn_triage.png" alt="Burn Injury Triage">
-                <h3>Deep Learning for Triage of In Vivo Burn Injuries</h3>
-                <div class="venue">Biomedical Optics Express, 2022 &middot; First Author</div>
-                <p>Automated burn injury triage using deep learning on optical imaging data.</p>
-                <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper</a>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_burn_triage.png" alt="">
+                <div class="pub-content">
+                    <h3 class="pub-title">Deep Learning for Triage of In Vivo Burn Injuries</h3>
+                    <div class="pub-venue">Biomedical Optics Express, 2022 · First Author</div>
+                    <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper →</a>
+                </div>
             </div>
-
-            <div class="pub-item">
-                <img class="pub-figure" src="pub_thz_lstm.png" alt="THz Burn Imaging">
-                <h3>THz Spectroscopic Imaging and LSTM for Non-invasive Dermal Burn Depth Measurements</h3>
-                <div class="venue">Scientific Reports, 2022 &middot; First Author</div>
-                <p>Automated burn classification using THz time-domain imaging.</p>
-                <a class="pub-link" href="https://www.nature.com/articles/s41598-022-08940-4" target="_blank">Read paper</a>
-            </div>
-
-            <div class="pub-item">
-                <p style="color:var(--text-muted); font-size:0.85rem;">+ 30 additional co-authored publications in medical imaging, spectroscopy, and biomedical signal processing.</p>
-            </div>
-
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <div class="section-label">Contact</div>
-        <p>Open to collaborations in AI-driven drug discovery, biomedical data modeling, and generative learning research.</p>
-        <a class="email-link" href="mailto:m.ebrahimkhani1993@gmail.com">m.ebrahimkhani1993@gmail.com</a>
     </section>
 
 </div>
 
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Let's Connect</h2>
+        <p>Open to collaborations in AI-driven drug discovery and biomedical research.</p>
+        <a class="contact-email" href="mailto:m.ebrahimkhani1993@gmail.com">Get in touch</a>
+    </div>
+</section>
+
 <footer>
-    &copy; 2025 Matt Ebrahim
+    <div class="container">
+        © 2025 Matt Ebrahim
+    </div>
 </footer>
 
 </body>
