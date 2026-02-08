@@ -339,6 +339,46 @@
             margin-bottom: 12px;
         }
 
+        /* ── Skills ───────────────────────────────────────── */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 32px;
+        }
+
+        .skill-row {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .skill-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: 0.01em;
+        }
+
+        .skill-value {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ── Education ────────────────────────────────────── */
+        .edu-list { display: flex; flex-direction: column; gap: 12px; }
+
+        .edu-item h3 {
+            font-size: 0.93rem;
+            font-weight: 600;
+        }
+
+        .edu-item .edu-detail {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 1px;
+        }
+
         /* ── Contact ──────────────────────────────────────── */
         .contact p {
             font-size: 0.95rem;
@@ -389,6 +429,7 @@
             #experience { margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px; }
 
             .course-item { flex-direction: column; gap: 2px; }
+            .skills-grid { grid-template-columns: 1fr; }
 
             section { padding: 36px 0; }
         }
@@ -403,6 +444,7 @@
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#teaching">Teaching</a>
+            <a href="#skills">Skills</a>
             <a href="#publications">Publications</a>
             <a href="#contact">Contact</a>
         </div>
@@ -415,7 +457,7 @@
         <img class="hero-portrait" src="mahmoud_1.jpg" alt="Matt Ebrahim">
         <div class="hero-text">
             <h1>Matt Ebrahim, Ph.D.</h1>
-            <p class="tagline">AI Scientist building generative models for drug discovery and healthcare.</p>
+            <p class="tagline">Senior Data Scientist &middot; Generative AI &middot; Drug Discovery &middot; Biotech</p>
             <div class="hero-links">
                 <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
                     <img src="linkedin_logo.png" alt="">LinkedIn
@@ -436,8 +478,9 @@
     <section id="about" class="about">
         <div class="section-label">About</div>
         <div class="about-content">
-            <p>Senior Data Scientist at Formation Bio, focused on generative modeling and predictive AI for drug discovery.</p>
-            <p>I build scalable models&mdash;transformers, GNNs, diffusion, and reinforcement learning&mdash;to generate biologically meaningful molecules. I lead multimodal fusion projects integrating molecular graphs, quantum chemistry, and biological assay data.</p>
+            <p>Senior Data Scientist at Formation Bio, leading high-impact drug repurposing initiatives and owning the full ML lifecycle from data curation through stakeholder communication.</p>
+            <p>I build scalable models&mdash;transformers, GNNs, diffusion, and reinforcement learning&mdash;for de novo molecule generation, ADMET prediction, and clinical portfolio prioritization. I also teach graduate-level AI courses at Northeastern University.</p>
+            <p>Ph.D. in Biomedical Engineering from Stony Brook University. 8+ first-author papers, 30+ co-authored publications, and a U.S. patent.</p>
         </div>
     </section>
 
@@ -448,32 +491,40 @@
                 <img class="exp-logo" src="formation_bio_logo.png" alt="Formation Bio">
                 <div class="exp-info">
                     <h3>Formation Bio</h3>
-                    <div class="role">Senior Data Scientist</div>
-                    <p>Knowledge Graphs and Graph Neural Networks for clinical portfolio prioritization.</p>
+                    <div class="role">Senior Data Scientist &middot; Jun 2025 &ndash; Present</div>
+                    <p>Lead drug repurposing initiatives across the full ML lifecycle. Architected GNN pipelines on biomedical knowledge graphs for portfolio investment decisions. Built MRI surrogate endpoint models, scalable data curation pipelines on GCP, and fine-tuned domain-specific LLMs for ontology mapping.</p>
                 </div>
             </div>
             <div class="exp-item">
                 <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
                 <div class="exp-info">
                     <h3>1910 Genetics</h3>
-                    <div class="role">Lead AI Scientist</div>
-                    <p>Small and large molecule generation using GenAI, deep learning for ADMET prediction, and QM-informed multimodal AI modeling.</p>
+                    <div class="role">AI Scientist II &middot; Nov 2024 &ndash; May 2025</div>
+                    <p>Led design and deployment of generative AI systems for de novo molecular generation. Developed novel multimodal architecture for BBB permeability prediction (submitted to NeurIPS 2025). Delivered molecules that progressed through in vitro/in vivo validation with nanomolar inhibition.</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
+                <div class="exp-info">
+                    <h3>1910 Genetics</h3>
+                    <div class="role">AI Scientist I &middot; 2023 &ndash; Nov 2024</div>
+                    <p>Built and deployed GNNs, chemical language models, and diffusion models for small molecule generation. Integrated quantum mechanics features into graph models for ADMET prediction. Developed SMILES-based RNNs with RL for CNS-targeted drug discovery.</p>
                 </div>
             </div>
             <div class="exp-item">
                 <img class="exp-logo" src="northwestern_logo.png" alt="Northwestern University">
                 <div class="exp-info">
                     <h3>Northwestern University</h3>
-                    <div class="role">Postdoctoral Researcher</div>
-                    <p>Built deep learning models for wearable cardiovascular diagnostics.</p>
+                    <div class="role">Clinical Research Associate &middot; 2022 &ndash; 2023</div>
+                    <p>Led research at the intersection of medical imaging and deep learning. Developed CycleGAN for MRI flow synthesis from CT data. Built CNN-MLP systems for non-invasive aortic blood flow estimation from wearable SCG signals, resulting in a first-author publication and U.S. patent.</p>
                 </div>
             </div>
             <div class="exp-item">
                 <img class="exp-logo" src="stony_brook_logo.png" alt="Stony Brook University">
                 <div class="exp-info">
                     <h3>Stony Brook University</h3>
-                    <div class="role">Ph.D. Research</div>
-                    <p>Developed GNNs and neural image analysis pipelines for THz medical imaging.</p>
+                    <div class="role">Ph.D. Research &middot; 2017 &ndash; 2022</div>
+                    <p>Developed signal- and image-processing ML models for terahertz imaging and burn injury diagnostics. Published 8+ first-author papers and co-authored 30+ peer-reviewed publications.</p>
                 </div>
             </div>
         </div>
@@ -483,11 +534,12 @@
         <div class="section-label">Teaching</div>
         <div class="teaching-intro">
             <img src="northeastern_logo.png" alt="Northeastern">
-            <span>Northeastern University</span>
+            <span>Adjunct Teaching Professor, Northeastern University &middot; Spring 2025 &ndash; Present</span>
         </div>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.6;">Designed and delivered graduate courses with hands-on experience in foundation models, diffusion models for medical image synthesis, and chemical language models for drug generation.</p>
         <ul class="course-list">
             <li class="course-item">
-                <span class="course-name">Applied Deep Learning &amp; Generative Models in Healthcare <a href="https://chongchen1999.github.io/CSYE7374-2025/" target="_blank">&rarr;</a></span>
+                <span class="course-name">CSYE 7374: Deep Learning &amp; Generative AI in Healthcare <a href="https://matt-ebrahim.github.io/CSYE7374" target="_blank">&rarr;</a></span>
                 <span class="course-term">Spring 2025</span>
             </li>
             <li class="course-item">
@@ -501,14 +553,66 @@
         </ul>
     </section>
 
+    <section id="skills">
+        <div class="section-label">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-row">
+                <span class="skill-label">Languages</span>
+                <span class="skill-value">Python, C++, MATLAB, Bash</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">AI/ML Frameworks</span>
+                <span class="skill-value">PyTorch, TensorFlow, Scikit-learn, Optuna, Hugging Face</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Generative Modeling</span>
+                <span class="skill-value">Diffusion (DDPM), Transformers (GPT, T5), VAE, GAN, RNN/LSTM</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Molecular Modeling</span>
+                <span class="skill-value">RDKit, DeepChem, AutoDock Vina, ESMFold, AlphaFold</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Graph ML</span>
+                <span class="skill-value">Graphormer, GCN, GAT, MPNN, DGL, PyG</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Foundation Models</span>
+                <span class="skill-value">BioMistral, BioMegatron, SapBERT, MedGemma, BioMedCLIP</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Cloud &amp; MLOps</span>
+                <span class="skill-value">Azure ML, AWS (Bedrock, SageMaker), GCP, Snowflake, Docker, Git</span>
+            </div>
+            <div class="skill-row">
+                <span class="skill-label">Domains</span>
+                <span class="skill-value">Drug discovery, ADMET, protein-ligand design, medical imaging, knowledge graphs</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-label">Education</div>
+        <div class="edu-list">
+            <div class="edu-item">
+                <h3>Ph.D., Biomedical Engineering</h3>
+                <div class="edu-detail">Stony Brook University &middot; 2022</div>
+            </div>
+            <div class="edu-item">
+                <h3>B.Sc., Electrical Engineering</h3>
+                <div class="edu-detail">Amirkabir University of Technology &middot; 2016</div>
+            </div>
+        </div>
+    </section>
+
     <section id="publications">
-        <div class="section-label">Publications &amp; Patent</div>
+        <div class="section-label">Select Publications &amp; Patent</div>
         <div class="pub-list">
 
             <div class="pub-item">
                 <span class="pub-badge">Patent</span>
-                <h3>Personalized Chest Acceleration Derived Prediction of Cardiovascular Abnormalities Using Deep Learning</h3>
-                <div class="venue">Issued February 2025</div>
+                <h3>Personalized Chest Acceleration Using Deep Learning</h3>
+                <div class="venue">U.S. Patent &middot; Issued 2025</div>
                 <p>ML system for noninvasive cardiovascular flow mapping using wearable SCG sensors.</p>
                 <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent</a>
             </div>
@@ -522,18 +626,29 @@
 
             <div class="pub-item">
                 <img class="pub-figure" src="manuscript_01.png" alt="Aortic Diagnosis">
-                <h3>Multimodal Deep Learning for Aortic Diagnosis Using SCG and 4D-Flow MRI</h3>
-                <div class="venue">Annals of Biomedical Engineering, 2023</div>
+                <h3>Deep Learning for Aortic Flow Estimation from SCG</h3>
+                <div class="venue">Annals of Biomedical Engineering, 2023 &middot; First Author</div>
                 <p>Deep learning pipeline to estimate flow dynamics from wearable sensors.</p>
                 <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper</a>
             </div>
 
             <div class="pub-item">
+                <h3>Deep Learning for Triage of In Vivo Burn Injuries</h3>
+                <div class="venue">Biomedical Optics Express, 2022 &middot; First Author</div>
+                <p>Automated burn injury triage using deep learning on optical imaging data.</p>
+                <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper</a>
+            </div>
+
+            <div class="pub-item">
                 <img class="pub-figure" src="manuscript_02.png" alt="THz Burn Imaging">
                 <h3>THz Spectroscopic Imaging and LSTM for Non-invasive Dermal Burn Depth Measurements</h3>
-                <div class="venue">Scientific Reports, 2022</div>
+                <div class="venue">Scientific Reports, 2022 &middot; First Author</div>
                 <p>Automated burn classification using THz time-domain imaging.</p>
                 <a class="pub-link" href="https://www.nature.com/articles/s41598-022-08940-4" target="_blank">Read paper</a>
+            </div>
+
+            <div class="pub-item">
+                <p style="color:var(--text-muted); font-size:0.85rem;">+ 30 additional co-authored publications in medical imaging, spectroscopy, and biomedical signal processing.</p>
             </div>
 
         </div>
