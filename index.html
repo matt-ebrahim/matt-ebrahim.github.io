@@ -196,50 +196,52 @@
         }
 
         /* Experience */
-        .timeline {
-            position: relative;
-            padding-left: 24px;
-            border-left: 2px solid var(--border);
+        .exp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
         }
 
-        .timeline-item {
-            position: relative;
-            padding-bottom: 40px;
+        .exp-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
 
-        .timeline-item:last-child { padding-bottom: 0; }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -29px;
-            top: 4px;
-            width: 10px;
-            height: 10px;
-            background: var(--bg);
-            border: 2px solid var(--border);
-            border-radius: 50%;
+        .exp-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px;
         }
 
-        .timeline-date {
+        .exp-content {
+            flex: 1;
+        }
+
+        .exp-date {
             font-size: 0.8rem;
             color: var(--text-muted);
             margin-bottom: 4px;
         }
 
-        .timeline-title {
+        .exp-title {
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 2px;
         }
 
-        .timeline-company {
+        .exp-company {
             font-size: 0.9rem;
             color: var(--text-secondary);
             margin-bottom: 8px;
         }
 
-        .timeline-desc {
+        .exp-desc {
             font-size: 0.9rem;
             color: var(--text-secondary);
             line-height: 1.7;
@@ -275,35 +277,33 @@
         /* Publications */
         .pub-grid {
             display: grid;
-            gap: 24px;
+            gap: 32px;
         }
 
         .pub-card {
-            display: flex;
-            gap: 24px;
-            padding: 24px;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 16px;
+            overflow: hidden;
             transition: all 0.2s;
         }
 
         .pub-card:hover {
             border-color: var(--text-muted);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
         }
 
         .pub-image {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 8px;
-            flex-shrink: 0;
-            background: var(--bg);
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 16px;
         }
 
         .pub-content {
-            flex: 1;
+            padding: 24px;
         }
 
         .pub-badge {
@@ -314,26 +314,26 @@
             text-transform: uppercase;
             color: var(--accent);
             background: var(--accent-subtle);
-            padding: 4px 10px;
-            border-radius: 4px;
-            margin-bottom: 8px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
         }
 
         .pub-title {
-            font-size: 0.95rem;
+            font-size: 1.05rem;
             font-weight: 600;
             line-height: 1.4;
-            margin-bottom: 4px;
-        }
-
-        .pub-venue {
-            font-size: 0.8rem;
-            color: var(--text-muted);
             margin-bottom: 8px;
         }
 
+        .pub-venue {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
         .pub-link {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: var(--accent);
             font-weight: 500;
         }
@@ -495,30 +495,42 @@
 
     <section id="experience">
         <div class="section-header">Experience</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Jun 2025 — Present</div>
-                <div class="timeline-title">Senior Data Scientist</div>
-                <div class="timeline-company">Formation Bio</div>
-                <p class="timeline-desc">Lead drug repurposing with GNN pipelines on biomedical knowledge graphs. Build MRI surrogate endpoint models and fine-tune domain-specific LLMs for ontology mapping.</p>
+        <div class="exp-list">
+            <div class="exp-item">
+                <img class="exp-logo" src="formation_bio_logo.png" alt="Formation Bio">
+                <div class="exp-content">
+                    <div class="exp-date">Jun 2025 — Present</div>
+                    <div class="exp-title">Senior Data Scientist</div>
+                    <div class="exp-company">Formation Bio</div>
+                    <p class="exp-desc">Lead drug repurposing with GNN pipelines on biomedical knowledge graphs. Build MRI surrogate endpoint models and fine-tune domain-specific LLMs for ontology mapping.</p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2023 — May 2025</div>
-                <div class="timeline-title">AI Scientist I → II</div>
-                <div class="timeline-company">1910 Genetics</div>
-                <p class="timeline-desc">Led generative AI for de novo molecular design. Developed multimodal GNN architecture for BBB permeability (NeurIPS 2025 submission). Delivered molecules progressing through in vitro/in vivo validation.</p>
+            <div class="exp-item">
+                <img class="exp-logo" src="1910_logo.png" alt="1910 Genetics">
+                <div class="exp-content">
+                    <div class="exp-date">2023 — May 2025</div>
+                    <div class="exp-title">AI Scientist I → II</div>
+                    <div class="exp-company">1910 Genetics</div>
+                    <p class="exp-desc">Led generative AI for de novo molecular design. Developed multimodal GNN architecture for BBB permeability (NeurIPS 2025 submission). Delivered molecules progressing through in vitro/in vivo validation.</p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2022 — 2023</div>
-                <div class="timeline-title">Clinical Research Associate</div>
-                <div class="timeline-company">Northwestern University</div>
-                <p class="timeline-desc">Deep learning for medical imaging. CycleGAN for MRI synthesis from CT. CNN-MLP for aortic flow estimation from wearable sensors (first-author publication + U.S. patent).</p>
+            <div class="exp-item">
+                <img class="exp-logo" src="northwestern_logo.png" alt="Northwestern University">
+                <div class="exp-content">
+                    <div class="exp-date">2022 — 2023</div>
+                    <div class="exp-title">Clinical Research Associate</div>
+                    <div class="exp-company">Northwestern University</div>
+                    <p class="exp-desc">Deep learning for medical imaging. CycleGAN for MRI synthesis from CT. CNN-MLP for aortic flow estimation from wearable sensors (first-author publication + U.S. patent).</p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-date">2017 — 2022</div>
-                <div class="timeline-title">Ph.D. in Biomedical Engineering</div>
-                <div class="timeline-company">Stony Brook University</div>
-                <p class="timeline-desc">ML models for terahertz imaging and burn injury diagnostics. 8+ first-author and 30+ co-authored peer-reviewed publications.</p>
+            <div class="exp-item">
+                <img class="exp-logo" src="stony_brook_logo.png" alt="Stony Brook University">
+                <div class="exp-content">
+                    <div class="exp-date">2017 — 2022</div>
+                    <div class="exp-title">Ph.D. in Biomedical Engineering</div>
+                    <div class="exp-company">Stony Brook University</div>
+                    <p class="exp-desc">ML models for terahertz imaging and burn injury diagnostics. 8+ first-author and 30+ co-authored peer-reviewed publications.</p>
+                </div>
             </div>
         </div>
     </section>
