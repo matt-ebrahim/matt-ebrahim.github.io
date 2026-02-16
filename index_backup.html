@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matt Ebrahim, Ph.D. - AI Scientist & Educator</title>
-    <meta name="description" content="Senior Data Scientist at Formation Bio specializing in AI for Drug Discovery. PhD in Biomedical Engineering.">
+    <title>Matt Ebrahim, Ph.D.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -20,23 +19,6 @@
             --border: #e5e5e5;
             --accent: #0066cc;
             --accent-subtle: #f0f7ff;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-        }
-
-        [data-theme="dark"] {
-            --bg: #0a0a0a;
-            --bg-card: #1a1a1a;
-            --text: #e5e5e5;
-            --text-secondary: #a0a0a0;
-            --text-muted: #666;
-            --border: #2a2a2a;
-            --accent: #3b82f6;
-            --accent-subtle: #1e3a5f;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
         }
 
         html { scroll-behavior: smooth; }
@@ -47,7 +29,6 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -57,50 +38,6 @@
             margin: 0 auto;
             padding: 0 24px;
         }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        .fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
-            opacity: 0;
-        }
-
-        /* Staggered animation delays */
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-        .delay-3 { animation-delay: 0.3s; }
-        .delay-4 { animation-delay: 0.4s; }
-        .delay-5 { animation-delay: 0.5s; }
 
         /* Navigation */
         nav {
@@ -113,15 +50,6 @@
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-
-        [data-theme="dark"] nav {
-            background: rgba(10, 10, 10, 0.8);
-        }
-
-        nav.scrolled {
-            box-shadow: var(--shadow-sm);
         }
 
         .nav-inner {
@@ -142,106 +70,20 @@
         .nav-links {
             display: flex;
             gap: 32px;
-            align-items: center;
         }
 
         .nav-links a {
             font-size: 0.85rem;
             color: var(--text-secondary);
             transition: color 0.2s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .nav-links a:hover { color: var(--text); }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle:hover {
-            background: var(--bg-card);
-            color: var(--accent);
-            transform: rotate(15deg);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .mobile-menu-btn span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text);
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-btn.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .mobile-menu-btn.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-btn.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
-        }
 
         /* Hero */
         .hero {
             padding: 140px 0 80px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--accent-subtle) 0%, transparent 70%);
-            opacity: 0.3;
-            animation: pulse 8s ease-in-out infinite;
-            pointer-events: none;
         }
 
         .hero-portrait {
@@ -251,14 +93,6 @@
             object-fit: cover;
             margin-bottom: 24px;
             box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-portrait:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
         }
 
         .hero h1 {
@@ -266,10 +100,6 @@
             font-weight: 600;
             letter-spacing: -0.03em;
             margin-bottom: 12px;
-            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
 
         .hero .tagline {
@@ -297,25 +127,20 @@
             font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-secondary);
-            transition: all 0.3s ease;
+            transition: all 0.2s;
         }
 
         .hero-links a:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--text-muted);
+            color: var(--text);
             transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .hero-links a img {
             width: 16px;
             height: 16px;
             opacity: 0.6;
-            transition: opacity 0.3s ease;
-        }
-
-        .hero-links a:hover img {
-            opacity: 1;
         }
 
         /* Sections */
@@ -330,16 +155,6 @@
             text-transform: uppercase;
             color: var(--text-muted);
             margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .section-header::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(to right, var(--border), transparent);
         }
 
         /* About */
@@ -365,17 +180,12 @@
 
         .stat {
             text-align: left;
-            transition: transform 0.3s ease;
-        }
-
-        .stat:hover {
-            transform: translateY(-4px);
         }
 
         .stat-value {
             font-size: 2rem;
             font-weight: 600;
-            color: var(--accent);
+            color: var(--text);
             letter-spacing: -0.02em;
         }
 
@@ -396,15 +206,6 @@
             display: flex;
             gap: 20px;
             align-items: flex-start;
-            padding: 20px;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .exp-item:hover {
-            background: var(--bg-card);
-            box-shadow: var(--shadow-md);
-            transform: translateX(8px);
         }
 
         .exp-logo {
@@ -416,11 +217,6 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             padding: 6px;
-            transition: transform 0.3s ease;
-        }
-
-        .exp-item:hover .exp-logo {
-            transform: scale(1.1);
         }
 
         .exp-content {
@@ -463,45 +259,13 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 12px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
-        }
-
-        .skill-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
         }
 
         .skill-card h3 {
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .skill-card h3::before {
-            content: '▸';
-            font-size: 1.2rem;
+            color: var(--text);
         }
 
         .skill-card p {
@@ -521,31 +285,13 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .pub-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .pub-card:hover::after {
-            transform: scaleX(1);
+            transition: all 0.2s;
         }
 
         .pub-card:hover {
-            border-color: var(--accent);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-4px);
+            border-color: var(--text-muted);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
         }
 
         .pub-image {
@@ -554,11 +300,6 @@
             object-fit: contain;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 16px;
-            transition: transform 0.3s ease;
-        }
-
-        .pub-card:hover .pub-image {
-            transform: scale(1.05);
         }
 
         .pub-content {
@@ -595,44 +336,9 @@
             font-size: 0.85rem;
             color: var(--accent);
             font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            transition: gap 0.3s ease;
         }
 
-        .pub-link::after {
-            content: '→';
-        }
-
-        .pub-link:hover {
-            gap: 8px;
-        }
-
-        /* GitHub Stats */
-        .github-stats {
-            display: flex;
-            gap: 16px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-
-        .stat-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            padding: 4px 10px;
-            background: var(--bg);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .stat-badge::before {
-            content: '★';
-            color: var(--accent);
-        }
+        .pub-link:hover { text-decoration: underline; }
 
         /* Teaching */
         .course-list {
@@ -643,16 +349,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 20px;
+            padding: 16px 0;
             border-bottom: 1px solid var(--border);
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-
-        .course-item:hover {
-            background: var(--bg-card);
-            padding-left: 28px;
-            box-shadow: var(--shadow-sm);
         }
 
         .course-item:last-child { border-bottom: none; }
@@ -666,40 +364,17 @@
             color: var(--accent);
             margin-left: 8px;
             font-size: 0.85rem;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .course-name a:hover {
-            opacity: 1;
         }
 
         .course-term {
             font-size: 0.85rem;
             color: var(--text-muted);
-            padding: 4px 12px;
-            background: var(--accent-subtle);
-            border-radius: 6px;
         }
 
         /* Contact */
         .contact-section {
             text-align: center;
             padding: 100px 0;
-            position: relative;
-        }
-
-        .contact-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, var(--accent-subtle), transparent);
-            opacity: 0.5;
-            pointer-events: none;
         }
 
         .contact-section h2 {
@@ -717,19 +392,17 @@
         .contact-email {
             display: inline-block;
             padding: 14px 32px;
-            background: var(--accent);
-            color: white;
+            background: var(--text);
+            color: var(--bg);
             border-radius: 8px;
             font-size: 0.95rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+            transition: all 0.2s;
         }
 
         .contact-email:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.4);
-            background: #0052a3;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         }
 
         /* Footer */
@@ -741,25 +414,6 @@
             border-top: 1px solid var(--border);
         }
 
-        /* Scroll Progress Bar */
-        .scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), #3b82f6);
-            z-index: 101;
-            transform-origin: left;
-            transition: transform 0.1s ease;
-        }
-
-        /* Loading Skeleton */
-        .skeleton {
-            background: linear-gradient(90deg, var(--border) 25%, var(--bg-card) 50%, var(--border) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 2s infinite;
-        }
-
         /* Responsive */
         @media (max-width: 640px) {
             .hero { padding: 120px 0 60px; }
@@ -767,23 +421,6 @@
             .hero .tagline { font-size: 1rem; }
 
             .nav-links { display: none; }
-            
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .nav-links.mobile-open {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                background: var(--bg-card);
-                padding: 20px;
-                box-shadow: var(--shadow-lg);
-                gap: 16px;
-            }
 
             .stats { flex-direction: column; gap: 24px; }
 
@@ -793,52 +430,31 @@
             .pub-image { width: 100%; height: 160px; }
 
             section { padding: 60px 0; }
-
-            .exp-item:hover {
-                transform: none;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            nav, .theme-toggle, .contact-section, footer { display: none; }
-            body { background: white; color: black; }
-            .pub-card, .skill-card, .exp-item { break-inside: avoid; }
         }
     </style>
 </head>
 <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<nav id="nav">
+<nav>
     <div class="nav-inner">
         <span class="nav-name">Matt Ebrahim</span>
-        <div class="nav-links" id="navLinks">
+        <div class="nav-links">
             <a href="#about">About</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#publications">Work</a>
             <a href="#contact">Contact</a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <span id="themeIcon">🌙</span>
-            </button>
         </div>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </div>
 </nav>
 
 <div class="container">
 
     <section class="hero">
-        <img class="hero-portrait fade-in" src="mahmoud_1.jpg" alt="Matt Ebrahim">
-        <h1 class="fade-in-up delay-1">Matt Ebrahim</h1>
-        <p class="tagline fade-in-up delay-2">Senior Data Scientist specializing in AI for Drug Discovery</p>
-        <div class="hero-links fade-in-up delay-3">
+        <img class="hero-portrait" src="mahmoud_1.jpg" alt="Matt Ebrahim">
+        <h1>Matt Ebrahim</h1>
+        <p class="tagline">Senior Data Scientist specializing in AI for Drug Discovery</p>
+        <div class="hero-links">
             <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
                 <img src="linkedin_logo.png" alt="">LinkedIn
             </a>
@@ -856,13 +472,13 @@
 
     <section id="about">
         <div class="section-header">About</div>
-        <p class="about-text fade-in-up">
+        <p class="about-text">
             I'm a <strong>Senior Data Scientist at Formation Bio</strong>, where I lead drug repurposing initiatives using machine learning. I build scalable models—transformers, graph neural networks, diffusion models—for molecule generation, ADMET prediction, and clinical portfolio prioritization.
         </p>
-        <p class="about-text fade-in-up delay-1" style="margin-top: 16px;">
+        <p class="about-text" style="margin-top: 16px;">
             I also teach graduate-level AI courses at <strong>Northeastern University</strong>, focusing on deep learning applications in healthcare and drug discovery.
         </p>
-        <div class="stats fade-in-up delay-2">
+        <div class="stats">
             <div class="stat">
                 <div class="stat-value">8+</div>
                 <div class="stat-label">First-author papers</div>
@@ -881,7 +497,7 @@
     <section id="experience">
         <div class="section-header">Experience</div>
         <div class="exp-list">
-            <div class="exp-item fade-in-up">
+            <div class="exp-item">
                 <img class="exp-logo" src="formation_bio_logo.png" alt="Formation Bio">
                 <div class="exp-content">
                     <div class="exp-date">Jun 2025 — Present</div>
@@ -890,7 +506,7 @@
                     <p class="exp-desc">Lead drug repurposing with GNN pipelines on biomedical knowledge graphs. Build MRI surrogate endpoint models and fine-tune domain-specific LLMs for ontology mapping.</p>
                 </div>
             </div>
-            <div class="exp-item fade-in-up delay-1">
+            <div class="exp-item">
                 <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
                 <div class="exp-content">
                     <div class="exp-date">2024 — May 2025</div>
@@ -899,7 +515,7 @@
                     <p class="exp-desc">Led generative AI for de novo molecular design. Developed multimodal GNN architecture for BBB permeability (NeurIPS 2025 submission). Delivered molecules progressing through in vitro/in vivo validation.</p>
                 </div>
             </div>
-            <div class="exp-item fade-in-up delay-2">
+            <div class="exp-item">
                 <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
                 <div class="exp-content">
                     <div class="exp-date">2023 — 2024</div>
@@ -908,7 +524,7 @@
                     <p class="exp-desc">Built ADMET prediction models and molecular property optimization pipelines. Contributed to multi-objective drug design workflows integrating ML with medicinal chemistry.</p>
                 </div>
             </div>
-            <div class="exp-item fade-in-up delay-3">
+            <div class="exp-item">
                 <img class="exp-logo" src="northwestern_logo.png" alt="Northwestern University">
                 <div class="exp-content">
                     <div class="exp-date">2022 — 2023</div>
@@ -917,7 +533,7 @@
                     <p class="exp-desc">Deep learning for medical imaging. CycleGAN for MRI synthesis from CT. CNN-MLP for aortic flow estimation from wearable sensors (first-author publication + U.S. patent).</p>
                 </div>
             </div>
-            <div class="exp-item fade-in-up delay-4">
+            <div class="exp-item">
                 <img class="exp-logo" src="stony_brook_logo.png" alt="Stony Brook University">
                 <div class="exp-content">
                     <div class="exp-date">2017 — 2022</div>
@@ -932,27 +548,27 @@
     <section id="skills">
         <div class="section-header">Technical Skills</div>
         <div class="skills-grid">
-            <div class="skill-card fade-in-up">
+            <div class="skill-card">
                 <h3>Generative AI</h3>
                 <p>Diffusion (DDPM), Transformers (GPT, T5), VAE, GAN, RNN/LSTM, Reinforcement Learning</p>
             </div>
-            <div class="skill-card fade-in-up delay-1">
+            <div class="skill-card">
                 <h3>Graph ML</h3>
                 <p>Graphormer, GCN, GAT, MPNN, PyG, DGL, Knowledge Graphs</p>
             </div>
-            <div class="skill-card fade-in-up delay-2">
+            <div class="skill-card">
                 <h3>Drug Discovery</h3>
                 <p>RDKit, DeepChem, AutoDock Vina, ESMFold, AlphaFold, ADMET modeling</p>
             </div>
-            <div class="skill-card fade-in-up delay-3">
+            <div class="skill-card">
                 <h3>Foundation Models</h3>
                 <p>BioMistral, BioMegatron, SapBERT, MedGemma, BioMedCLIP, DINOv3</p>
             </div>
-            <div class="skill-card fade-in-up delay-4">
+            <div class="skill-card">
                 <h3>ML Frameworks</h3>
                 <p>PyTorch, TensorFlow, Hugging Face, Scikit-learn, Optuna</p>
             </div>
-            <div class="skill-card fade-in-up delay-5">
+            <div class="skill-card">
                 <h3>Cloud & MLOps</h3>
                 <p>Azure ML, AWS (Bedrock, SageMaker), GCP, Snowflake, Docker</p>
             </div>
@@ -965,7 +581,7 @@
             Teaching — Northeastern University
         </div>
         <ul class="course-list">
-            <li class="course-item fade-in-up">
+            <li class="course-item">
                 <span class="course-name">Deep Learning & Generative AI in Healthcare <a href="https://matt-ebrahim.github.io/CSYE7374" target="_blank">→</a></span>
                 <span class="course-term">Spring 2025</span>
             </li>
@@ -975,49 +591,34 @@
     <section id="projects">
         <div class="section-header">Open Source Projects</div>
         <div class="pub-grid">
-            <div class="pub-card fade-in-up">
-                <img class="pub-image skeleton" src="https://raw.githubusercontent.com/matt-ebrahim/biomap/main/assets/biomap_banner.png" alt="BioMap Banner" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/biomap/main/assets/biomap_banner.png" alt="BioMap Banner" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
                 <div class="pub-content">
                     <span class="pub-badge">NLP</span>
                     <h3 class="pub-title">BioMap: Biomedical Entity Linking</h3>
                     <div class="pub-venue">Python · Transformers · LLMs · 2025</div>
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">Benchmarking framework for biomedical entity linking using SapBERT, BioMegatron, and LLMs (GPT-4, Gemini) on MedMentions dataset.</p>
-                    <div class="github-stats">
-                        <span class="stat-badge">Python</span>
-                        <span class="stat-badge">Transformers</span>
-                        <span class="stat-badge">FAISS</span>
-                    </div>
-                    <a class="pub-link" href="https://github.com/matt-ebrahim/biomap" target="_blank">View project</a>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/biomap" target="_blank">View project →</a>
                 </div>
             </div>
-            <div class="pub-card fade-in-up delay-1">
-                <img class="pub-image skeleton" src="https://raw.githubusercontent.com/matt-ebrahim/DiffBind/main/assets/diffbind_banner.png" alt="DiffBind Banner" onerror="this.style.background='linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'">
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/DiffBind/main/assets/diffbind_banner.png" alt="DiffBind Banner" onerror="this.style.background='linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'">
                 <div class="pub-content">
                     <span class="pub-badge">Drug Discovery</span>
                     <h3 class="pub-title">DiffBind: Diffusion Models for Binding Affinity</h3>
                     <div class="pub-venue">Python · PyTorch · RDKit · 2024</div>
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">DDPM implementation for predicting protein-ligand binding affinity using equivariant diffusion and the BindingMOAD dataset.</p>
-                    <div class="github-stats">
-                        <span class="stat-badge">PyTorch</span>
-                        <span class="stat-badge">RDKit</span>
-                        <span class="stat-badge">Diffusion</span>
-                    </div>
-                    <a class="pub-link" href="https://github.com/matt-ebrahim/DiffBind" target="_blank">View project</a>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/DiffBind" target="_blank">View project →</a>
                 </div>
             </div>
-            <div class="pub-card fade-in-up delay-2">
-                <img class="pub-image skeleton" src="https://raw.githubusercontent.com/matt-ebrahim/catflix/main/assets/catflix_banner.png" alt="Catflix Banner" onerror="this.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'">
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/catflix/main/assets/catflix_banner.png" alt="Catflix Banner" onerror="this.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'">
                 <div class="pub-content">
                     <span class="pub-badge">Creative AI</span>
                     <h3 class="pub-title">Catflix: AI-Generated Cat Videos</h3>
                     <div class="pub-venue">Python · MoviePy · Animation · 2025</div>
                     <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">Automated pipeline that generates and uploads animated videos for cats to YouTube, featuring procedurally generated bug animations.</p>
-                    <div class="github-stats">
-                        <span class="stat-badge">MoviePy</span>
-                        <span class="stat-badge">Animation</span>
-                        <span class="stat-badge">YouTube API</span>
-                    </div>
-                    <a class="pub-link" href="https://github.com/matt-ebrahim/catflix" target="_blank">View project</a>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/catflix" target="_blank">View project →</a>
                 </div>
             </div>
         </div>
@@ -1026,16 +627,16 @@
     <section id="publications">
         <div class="section-header">Selected Publications</div>
         <div class="pub-grid">
-            <div class="pub-card fade-in-up">
+            <div class="pub-card">
                 <img class="pub-image" src="pub_patent_cardio.png" alt="">
                 <div class="pub-content">
                     <span class="pub-badge">Patent</span>
                     <h3 class="pub-title">Personalized Chest Acceleration Using Deep Learning</h3>
                     <div class="pub-venue">U.S. Patent · Issued 2025</div>
-                    <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent</a>
+                    <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent →</a>
                 </div>
             </div>
-            <div class="pub-card fade-in-up delay-1">
+            <div class="pub-card">
                 <img class="pub-image" src="pub_admet_gnn.png" alt="">
                 <div class="pub-content">
                     <span class="pub-badge">NeurIPS 2025</span>
@@ -1043,20 +644,20 @@
                     <div class="pub-venue">Submitted · First Author</div>
                 </div>
             </div>
-            <div class="pub-card fade-in-up delay-2">
+            <div class="pub-card">
                 <img class="pub-image" src="pub_aortic_scg.png" alt="">
                 <div class="pub-content">
                     <h3 class="pub-title">Deep Learning for Aortic Flow Estimation from SCG</h3>
                     <div class="pub-venue">Annals of Biomedical Engineering, 2023 · First Author</div>
-                    <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper</a>
+                    <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper →</a>
                 </div>
             </div>
-            <div class="pub-card fade-in-up delay-3">
+            <div class="pub-card">
                 <img class="pub-image" src="pub_burn_triage.png" alt="">
                 <div class="pub-content">
                     <h3 class="pub-title">Deep Learning for Triage of In Vivo Burn Injuries</h3>
                     <div class="pub-venue">Biomedical Optics Express, 2022 · First Author</div>
-                    <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper</a>
+                    <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper →</a>
                 </div>
             </div>
         </div>
@@ -1064,7 +665,7 @@
 
 </div>
 
-<section id="contact" class="contact-section fade-in-up">
+<section id="contact" class="contact-section">
     <div class="container">
         <h2>Let's Connect</h2>
         <p>Open to collaborations in AI-driven drug discovery and biomedical research.</p>
@@ -1074,163 +675,9 @@
 
 <footer>
     <div class="container">
-        © 2025 Matt Ebrahim · Built with passion for AI and science
+        © 2025 Matt Ebrahim
     </div>
 </footer>
-
-<script>
-// Theme Toggle
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = document.getElementById('themeIcon');
-const html = document.documentElement;
-
-// Check for saved theme preference or default to 'light'
-const currentTheme = localStorage.getItem('theme') || 'light';
-html.setAttribute('data-theme', currentTheme);
-themeIcon.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-
-themeToggle.addEventListener('click', () => {
-    const theme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
-});
-
-// Mobile Menu
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.getElementById('navLinks');
-
-mobileMenuBtn.addEventListener('click', () => {
-    mobileMenuBtn.classList.toggle('active');
-    navLinks.classList.toggle('mobile-open');
-});
-
-// Close mobile menu when clicking a link
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('mobile-open');
-    });
-});
-
-// Scroll Progress Bar
-const scrollProgress = document.getElementById('scrollProgress');
-
-window.addEventListener('scroll', () => {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    scrollProgress.style.transform = `scaleX(${scrolled / 100})`;
-});
-
-// Nav Shadow on Scroll
-const nav = document.getElementById('nav');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
-// Intersection Observer for Fade-in Animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animationPlayState = 'running';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all elements with fade-in classes
-document.querySelectorAll('.fade-in, .fade-in-up').forEach(el => {
-    el.style.animationPlayState = 'paused';
-    observer.observe(el);
-});
-
-// Remove skeleton class when images load
-document.querySelectorAll('.pub-image.skeleton').forEach(img => {
-    img.addEventListener('load', () => {
-        img.classList.remove('skeleton');
-    });
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Stats Counter Animation
-const animateStats = () => {
-    const stats = document.querySelectorAll('.stat-value');
-    stats.forEach(stat => {
-        const target = parseInt(stat.textContent);
-        let current = 0;
-        const increment = target / 50;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                stat.textContent = target + '+';
-                clearInterval(timer);
-            } else {
-                stat.textContent = Math.floor(current) + '+';
-            }
-        }, 30);
-    });
-};
-
-// Trigger stats animation when in view
-const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateStats();
-            statsObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-
-const statsSection = document.querySelector('.stats');
-if (statsSection) {
-    statsObserver.observe(statsSection);
-}
-
-// Keyboard Navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('mobile-open');
-    }
-});
-
-// Performance: Lazy load images
-if ('loading' in HTMLImageElement.prototype) {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    images.forEach(img => {
-        img.src = img.dataset.src;
-    });
-} else {
-    // Fallback for browsers that don't support lazy loading
-    const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.2/lazysizes.min.js';
-    document.body.appendChild(script);
-}
-</script>
 
 </body>
 </html>
