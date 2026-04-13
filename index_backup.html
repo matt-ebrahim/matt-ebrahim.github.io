@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Ebrahim, Ph.D.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #fafafa;
+            --bg-card: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #666;
+            --text-muted: #999;
+            --border: #e5e5e5;
+            --accent: #0066cc;
+            --accent-subtle: #f0f7ff;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 250, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .hero-portrait {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 28px;
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .hero-links a:hover {
+            border-color: var(--text-muted);
+            color: var(--text);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .hero-links a img {
+            width: 16px;
+            height: 16px;
+            opacity: 0.6;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+
+        /* About */
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 640px;
+        }
+
+        .about-text strong {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Experience */
+        .exp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .exp-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .exp-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            object-fit: contain;
+            flex-shrink: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 6px;
+        }
+
+        .exp-content {
+            flex: 1;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .exp-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .exp-company {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .exp-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .skill-card {
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .skill-card h3 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .skill-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Publications */
+        .pub-grid {
+            display: grid;
+            gap: 32px;
+        }
+
+        .pub-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.2s;
+        }
+
+        .pub-card:hover {
+            border-color: var(--text-muted);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+
+        .pub-image {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 16px;
+        }
+
+        .pub-content {
+            padding: 24px;
+        }
+
+        .pub-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: var(--accent-subtle);
+            padding: 5px 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+        }
+
+        .pub-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .pub-venue {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .pub-link {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .pub-link:hover { text-decoration: underline; }
+
+        /* Teaching */
+        .course-list {
+            list-style: none;
+        }
+
+        .course-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .course-item:last-child { border-bottom: none; }
+
+        .course-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .course-name a {
+            color: var(--accent);
+            margin-left: 8px;
+            font-size: 0.85rem;
+        }
+
+        .course-term {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Contact */
+        .contact-section {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .contact-section p {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--text);
+            color: var(--bg);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero { padding: 120px 0 60px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero .tagline { font-size: 1rem; }
+
+            .nav-links { display: none; }
+
+            .stats { flex-direction: column; gap: 24px; }
+
+            .skills-grid { grid-template-columns: 1fr; }
+
+            .pub-card { flex-direction: column; }
+            .pub-image { width: 100%; height: 160px; }
+
+            section { padding: 60px 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <span class="nav-name">Matt Ebrahim</span>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Work</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <section class="hero">
+        <img class="hero-portrait" src="mahmoud_1.jpg" alt="Matt Ebrahim">
+        <h1>Matt Ebrahim</h1>
+        <p class="tagline">Senior Data Scientist specializing in AI for Drug Discovery</p>
+        <div class="hero-links">
+            <a href="https://www.linkedin.com/in/matt-ebrahim/" target="_blank">
+                <img src="linkedin_logo.png" alt="">LinkedIn
+            </a>
+            <a href="https://github.com/matt-ebrahim" target="_blank">
+                <img src="github_logo.png" alt="">GitHub
+            </a>
+            <a href="https://scholar.google.com/citations?user=QKQsMQkAAAAJ&hl=en" target="_blank">
+                <img src="google_scholar_logo.png" alt="">Scholar
+            </a>
+            <a href="MattEbrahim_Resume.pdf" target="_blank">
+                <img src="cv_logo.png" alt="">Resume
+            </a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">About</div>
+        <p class="about-text">
+            I'm a <strong>Senior Data Scientist at Formation Bio</strong>, where I lead drug repurposing initiatives using machine learning. I build scalable models—transformers, graph neural networks, diffusion models—for molecule generation, ADMET prediction, and clinical portfolio prioritization.
+        </p>
+        <p class="about-text" style="margin-top: 16px;">
+            I also teach graduate-level AI courses at <strong>Northeastern University</strong>, focusing on deep learning applications in healthcare and drug discovery.
+        </p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">8+</div>
+                <div class="stat-label">First-author papers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">30+</div>
+                <div class="stat-label">Publications</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">1</div>
+                <div class="stat-label">U.S. Patent</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header">Experience</div>
+        <div class="exp-list">
+            <div class="exp-item">
+                <img class="exp-logo" src="formation_bio_logo.png" alt="Formation Bio">
+                <div class="exp-content">
+                    <div class="exp-date">Jun 2025 — Present</div>
+                    <div class="exp-title">Senior Data Scientist</div>
+                    <div class="exp-company">Formation Bio</div>
+                    <p class="exp-desc">Lead drug repurposing with GNN pipelines on biomedical knowledge graphs. Build MRI surrogate endpoint models and fine-tune domain-specific LLMs for ontology mapping.</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
+                <div class="exp-content">
+                    <div class="exp-date">2024 — May 2025</div>
+                    <div class="exp-title">AI Scientist II</div>
+                    <div class="exp-company">1910 Genetics</div>
+                    <p class="exp-desc">Led generative AI for de novo molecular design. Developed multimodal GNN architecture for BBB permeability (NeurIPS 2025 submission). Delivered molecules progressing through in vitro/in vivo validation.</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <img class="exp-logo" src="1910_logo_new.png" alt="1910 Genetics">
+                <div class="exp-content">
+                    <div class="exp-date">2023 — 2024</div>
+                    <div class="exp-title">AI Scientist I</div>
+                    <div class="exp-company">1910 Genetics</div>
+                    <p class="exp-desc">Built ADMET prediction models and molecular property optimization pipelines. Contributed to multi-objective drug design workflows integrating ML with medicinal chemistry.</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <img class="exp-logo" src="northwestern_logo.png" alt="Northwestern University">
+                <div class="exp-content">
+                    <div class="exp-date">2022 — 2023</div>
+                    <div class="exp-title">Clinical Research Associate</div>
+                    <div class="exp-company">Northwestern University</div>
+                    <p class="exp-desc">Deep learning for medical imaging. CycleGAN for MRI synthesis from CT. CNN-MLP for aortic flow estimation from wearable sensors (first-author publication + U.S. patent).</p>
+                </div>
+            </div>
+            <div class="exp-item">
+                <img class="exp-logo" src="stony_brook_logo.png" alt="Stony Brook University">
+                <div class="exp-content">
+                    <div class="exp-date">2017 — 2022</div>
+                    <div class="exp-title">Ph.D. in Biomedical Engineering</div>
+                    <div class="exp-company">Stony Brook University</div>
+                    <p class="exp-desc">ML models for terahertz imaging and burn injury diagnostics. 8+ first-author and 30+ co-authored peer-reviewed publications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Generative AI</h3>
+                <p>Diffusion (DDPM), Transformers (GPT, T5), VAE, GAN, RNN/LSTM, Reinforcement Learning</p>
+            </div>
+            <div class="skill-card">
+                <h3>Graph ML</h3>
+                <p>Graphormer, GCN, GAT, MPNN, PyG, DGL, Knowledge Graphs</p>
+            </div>
+            <div class="skill-card">
+                <h3>Drug Discovery</h3>
+                <p>RDKit, DeepChem, AutoDock Vina, ESMFold, AlphaFold, ADMET modeling</p>
+            </div>
+            <div class="skill-card">
+                <h3>Foundation Models</h3>
+                <p>BioMistral, BioMegatron, SapBERT, MedGemma, BioMedCLIP, DINOv3</p>
+            </div>
+            <div class="skill-card">
+                <h3>ML Frameworks</h3>
+                <p>PyTorch, TensorFlow, Hugging Face, Scikit-learn, Optuna</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud & MLOps</h3>
+                <p>Azure ML, AWS (Bedrock, SageMaker), GCP, Snowflake, Docker</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <div class="section-header" style="display: flex; align-items: center; gap: 12px;">
+            <img src="northeastern_logo.png" alt="Northeastern University" style="width: 32px; height: 32px; border-radius: 6px; object-fit: contain; border: 1px solid var(--border); padding: 2px;">
+            Teaching — Northeastern University
+        </div>
+        <ul class="course-list">
+            <li class="course-item">
+                <span class="course-name">Deep Learning & Generative AI in Healthcare <a href="https://matt-ebrahim.github.io/CSYE7374" target="_blank">→</a></span>
+                <span class="course-term">Spring 2025</span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">Open Source Projects</div>
+        <div class="pub-grid">
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/biomap/main/assets/biomap_banner.png" alt="BioMap Banner" onerror="this.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)'">
+                <div class="pub-content">
+                    <span class="pub-badge">NLP</span>
+                    <h3 class="pub-title">BioMap: Biomedical Entity Linking</h3>
+                    <div class="pub-venue">Python · Transformers · LLMs · 2025</div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">Benchmarking framework for biomedical entity linking using SapBERT, BioMegatron, and LLMs (GPT-4, Gemini) on MedMentions dataset.</p>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/biomap" target="_blank">View project →</a>
+                </div>
+            </div>
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/DiffBind/main/assets/diffbind_banner.png" alt="DiffBind Banner" onerror="this.style.background='linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'">
+                <div class="pub-content">
+                    <span class="pub-badge">Drug Discovery</span>
+                    <h3 class="pub-title">DiffBind: Diffusion Models for Binding Affinity</h3>
+                    <div class="pub-venue">Python · PyTorch · RDKit · 2024</div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">DDPM implementation for predicting protein-ligand binding affinity using equivariant diffusion and the BindingMOAD dataset.</p>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/DiffBind" target="_blank">View project →</a>
+                </div>
+            </div>
+            <div class="pub-card">
+                <img class="pub-image" src="https://raw.githubusercontent.com/matt-ebrahim/catflix/main/assets/catflix_banner.png" alt="Catflix Banner" onerror="this.style.background='linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'">
+                <div class="pub-content">
+                    <span class="pub-badge">Creative AI</span>
+                    <h3 class="pub-title">Catflix: AI-Generated Cat Videos</h3>
+                    <div class="pub-venue">Python · MoviePy · Animation · 2025</div>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 12px 0;">Automated pipeline that generates and uploads animated videos for cats to YouTube, featuring procedurally generated bug animations.</p>
+                    <a class="pub-link" href="https://github.com/matt-ebrahim/catflix" target="_blank">View project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <div class="section-header">Selected Publications</div>
+        <div class="pub-grid">
+            <div class="pub-card">
+                <img class="pub-image" src="pub_patent_cardio.png" alt="">
+                <div class="pub-content">
+                    <span class="pub-badge">Patent</span>
+                    <h3 class="pub-title">Personalized Chest Acceleration Using Deep Learning</h3>
+                    <div class="pub-venue">U.S. Patent · Issued 2025</div>
+                    <a class="pub-link" href="https://www.freepatentsonline.com/y2025/0040894.html" target="_blank">View patent →</a>
+                </div>
+            </div>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_admet_gnn.png" alt="">
+                <div class="pub-content">
+                    <span class="pub-badge">NeurIPS 2025</span>
+                    <h3 class="pub-title">Multimodal Graph-Attention Networks with QM-Guided Cross-Attention for ADMET Prediction</h3>
+                    <div class="pub-venue">Submitted · First Author</div>
+                </div>
+            </div>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_aortic_scg.png" alt="">
+                <div class="pub-content">
+                    <h3 class="pub-title">Deep Learning for Aortic Flow Estimation from SCG</h3>
+                    <div class="pub-venue">Annals of Biomedical Engineering, 2023 · First Author</div>
+                    <a class="pub-link" href="https://link.springer.com/article/10.1007/s10439-023-03342-7" target="_blank">Read paper →</a>
+                </div>
+            </div>
+            <div class="pub-card">
+                <img class="pub-image" src="pub_burn_triage.png" alt="">
+                <div class="pub-content">
+                    <h3 class="pub-title">Deep Learning for Triage of In Vivo Burn Injuries</h3>
+                    <div class="pub-venue">Biomedical Optics Express, 2022 · First Author</div>
+                    <a class="pub-link" href="https://opg.optica.org/boe/abstract.cfm?uri=boe-13-3-1548" target="_blank">Read paper →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Let's Connect</h2>
+        <p>Open to collaborations in AI-driven drug discovery and biomedical research.</p>
+        <a class="contact-email" href="mailto:m.ebrahimkhani1993@gmail.com">Get in touch</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2025 Matt Ebrahim
+    </div>
+</footer>
+
+</body>
+</html>
